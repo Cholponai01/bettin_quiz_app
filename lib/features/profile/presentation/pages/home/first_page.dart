@@ -78,7 +78,7 @@ class StartScreen extends StatelessWidget {
                           style: TextStyle(
                             color: Color.fromRGBO(204, 209, 243, 1),
                           )),
-                      SizedBox(width: 40),
+                      SizedBox(width: 42),
                       Text('Privacy Policy',
                           style: TextStyle(
                             color: Color.fromRGBO(204, 209, 243, 1),
