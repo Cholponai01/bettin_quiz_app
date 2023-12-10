@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int index = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,25 +75,31 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Expanded(
         child: GridView.builder(
-          padding: const EdgeInsets.all(10.00),
+          padding: const EdgeInsets.all(16.00),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2, crossAxisSpacing: 5, mainAxisSpacing: 5),
           itemCount: 8,
           itemBuilder: (BuildContext context, int index) {
             return Container(
-              padding: const EdgeInsets.all(8.0),
               decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                        'assets/png_images/first_image.png',
-                      ),
-                      fit: BoxFit.cover)),
+                image: DecorationImage(
+                  image: AssetImage(
+                    'assets/png_images/first_image.png',
+                  ),
+                  fit: BoxFit.cover,
+                ),
+              ),
               child: Stack(
                 children: [
+                  SvgPicture.asset(
+                    'assets/svg_images/fog.svg',
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(16.0, 16, 16, 8),
+                    padding: const EdgeInsets.fromLTRB(16.0, 16, 16, 5),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -103,19 +110,8 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            for (int i = 0; i < 3; i++)
-                              SvgPicture.asset(
-                                'assets/svg_images/Star.svg',
-                                // ignore: deprecated_member_use
-                                color: const Color(0xFF2A4FC8),
-                              ),
-                          ],
-                        ),
                         const Text(
-                          'Elementary \nlevel',
+                          'Elementary\nlevel',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
@@ -124,7 +120,24 @@ class _HomePageState extends State<HomePage> {
                         )
                       ],
                     ),
-                  )
+                  ),
+                  Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const SizedBox(width: 16),
+                        for (int i = 0; i < 3; i++)
+                          SvgPicture.asset(
+                            'assets/svg_images/Star.svg',
+                            height: 37,
+                            width: 37,
+                            // ignore: deprecated_member_use
+                            color: const Color(0xFF406FD6),
+                          ),
+                        const SizedBox(width: 16),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             );
