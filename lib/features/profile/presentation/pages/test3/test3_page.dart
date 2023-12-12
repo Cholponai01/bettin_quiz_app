@@ -5,6 +5,17 @@ class Test3Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+        appBar: AppBar(
+          title: const Center(child: Text("Game")),
+        ),
+        body: Column(
+          children: [
+            Image.asset(
+              "assets/images/soccer-players1.png",
+              width: double.infinity,
+            ),
+          ],
+        ));
   }
 }
