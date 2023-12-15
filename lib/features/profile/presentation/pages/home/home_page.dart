@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -111,10 +113,16 @@ class _HomePageState extends State<HomePage> {
               ),
               child: Stack(
                 children: [
-                  SvgPicture.asset(
-                    'assets/svg_images/fog.svg',
+                  Container(
                     width: double.infinity,
-                    fit: BoxFit.cover,
+                    height: double.infinity,
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment(0.00, -1.00),
+                        end: Alignment(0, 1),
+                        colors: [Color(0x004A3BE1), Color(0xFF2C80E5)],
+                      ),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(16.0, 16, 16, 5),
@@ -141,23 +149,54 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                 
                   Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const SizedBox(width: 16),
                         for (int i = 0; i < 3; i++)
-                          SvgPicture.asset('assets/svg_images/Star.svg',
-                              height: 37,
-                              width: 37,
-                              // ignore: deprecated_member_use
-                              color: Colors.yellow // Color(0xFF406FD6),
-                              ),
+                          SvgPicture.asset(
+                            'assets/svg_images/Star.svg',
+                            height: 37,
+                            width: 37,
+                            // ignore: deprecated_member_use
+                            color: const Color(0xFF406FD6),
+                          ),
                         const SizedBox(width: 16),
                       ],
                     ),
                   ),
+                  ClipRRect(
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(
+                        sigmaX: 3,
+                        sigmaY: 2,
+                      ),
+                      child: SizedBox(
+                        width: double.infinity,
+                        height: double.infinity,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                              color: Colors.blue.withOpacity(0.3)),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: SizedBox(
+                      height: 51,
+                      width: 51,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(26),
+                            color: const Color(0xffFABB03)),
+                        child: SvgPicture.asset(
+                          'assets/svg_images/key.svg',
+                          fit: BoxFit.none,
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
             );
