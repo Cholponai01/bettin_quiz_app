@@ -1,4 +1,5 @@
 import 'package:betting_quiz_app/features/profile/presentation/pages/home/home_page.dart';
+import 'package:betting_quiz_app/features/profile/presentation/pages/home/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -21,7 +22,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
           children: const [
             Scaffold(),
             HomePage(),
-            Scaffold(),
+            SecondPage(),
           ],
         ),
       ),
