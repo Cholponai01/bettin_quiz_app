@@ -38,64 +38,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF2A4FC8),
-      appBar: AppBar(
-        backgroundColor: const Color(0xff2D7AE5),
-        title: const Text(
-          'Home',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          SizedBox(
-            width: 87,
-            height: 40,
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: const Color(0xFF2A4FC8),
-                borderRadius: BorderRadius.circular(40),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  const SizedBox(
-                    width: 37,
-                    child: Text(
-                      '50',
-                      style: TextStyle(
-                        color: Color(0xFFF8F804),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  Container(
-                    width: 32,
-                    height: 32,
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFFF8F804), Color(0xFFFBA802)],
-                      ),
-                      borderRadius: BorderRadius.circular(24),
-                    ),
-                    child: const Icon(
-                      Icons.star,
-                      color: Color(0xffE97C01),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(
-            width: 16,
-          )
-        ],
-      ),
       body: Expanded(
         child: GridView.builder(
           padding: const EdgeInsets.all(16.00),
