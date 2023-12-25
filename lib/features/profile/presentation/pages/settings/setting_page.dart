@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:betting_quiz_app/features/profile/presentation/pages/settings/achievements_page.dart';
+import 'package:betting_quiz_app/features/profile/presentation/widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +33,16 @@ class _SettingPageState extends State<SettingPage> {
         child: ListView.separated(
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
-                onTap: () {},
+                onTap: () {
+                  if (index == 0) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AchievementsPage(),
+                      ),
+                    );
+                  }
+                },
                 tileColor: const Color(0xFF2E6CE3),
                 leading: const ContainerWidget(
                   icon: Icon(
@@ -71,35 +82,6 @@ class _SettingPageState extends State<SettingPage> {
                   height: 7,
                 ),
             itemCount: words.length),
-      ),
-    );
-  }
-}
-
-class ContainerWidget extends StatelessWidget {
-  const ContainerWidget({
-    Key? key,
-    this.icon,
-  }) : super(key: key);
-  final Widget? icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 32,
-      width: 32,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          gradient: const LinearGradient(
-            begin: Alignment(0.00, -1.00),
-            end: Alignment(0, 1),
-            colors: [Color(0xFF20CAFF), Color(0xFF1290FF)],
-          ),
-        ),
-        child: Center(
-          child: icon,
-        ),
       ),
     );
   }
