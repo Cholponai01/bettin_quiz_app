@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                             fontSize: 20,
                             fontWeight: FontWeight.w700,
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
