@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:betting_quiz_app/features/profile/presentation/pages/settings/achievements_page.dart';
 import 'package:betting_quiz_app/features/profile/presentation/widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -34,14 +33,22 @@ class _SettingPageState extends State<SettingPage> {
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
                 onTap: () {
-                  if (index == 0) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AchievementsPage(),
-                      ),
-                    );
-                  }
+                  index == 0
+                      ? Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AchievementsPage(),
+                          ),
+                        )
+                      : null;
+                  // if (index == 0) {
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => const AchievementsPage(),
+                  //     ),
+                  //   );
+                  // }
                 },
                 tileColor: const Color(0xFF2E6CE3),
                 leading: const ContainerWidget(
