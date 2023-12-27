@@ -102,42 +102,50 @@ class _HomePageState extends State<HomePage> {
                             height: 37,
                             width: 37,
                             // ignore: deprecated_member_use
-                            color: const Color(0xFF406FD6),
+                            color: index == 0
+                                ? Colors.amber
+                                : const Color(0xFF406FD6),
                           ),
                         const SizedBox(width: 16),
                       ],
                     ),
                   ),
                   ClipRRect(
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(
-                        sigmaX: 3,
-                        sigmaY: 2,
-                      ),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: double.infinity,
-                        child: DecoratedBox(
-                          decoration: BoxDecoration(
-                              color: Colors.blue.withOpacity(0.3)),
-                        ),
-                      ),
-                    ),
+                    child: index == 0
+                        ? null
+                        : BackdropFilter(
+                            filter: ImageFilter.blur(
+                              sigmaX: 3,
+                              sigmaY: 2,
+                            ),
+                            child: index == 0
+                                ? null
+                                : SizedBox(
+                                    width: double.infinity,
+                                    height: double.infinity,
+                                    child: DecoratedBox(
+                                      decoration: BoxDecoration(
+                                          color: Colors.blue.withOpacity(0.3)),
+                                    ),
+                                  ),
+                          ),
                   ),
                   Center(
-                    child: SizedBox(
-                      height: 51,
-                      width: 51,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(26),
-                            color: const Color(0xffFABB03)),
-                        child: SvgPicture.asset(
-                          'assets/svg_images/key.svg',
-                          fit: BoxFit.none,
-                        ),
-                      ),
-                    ),
+                    child: index == 0
+                        ? null
+                        : SizedBox(
+                            height: 51,
+                            width: 51,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(26),
+                                  color: const Color(0xffFABB03)),
+                              child: SvgPicture.asset(
+                                'assets/svg_images/key.svg',
+                                fit: BoxFit.none,
+                              ),
+                            ),
+                          ),
                   )
                 ],
               ),
