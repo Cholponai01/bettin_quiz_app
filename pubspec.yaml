@@ -64,6 +64,8 @@ flutter:
     - assets/png_images/
     - assets/svg_images/
     - assets/bottom_icons/
+    - assets/png_icons/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

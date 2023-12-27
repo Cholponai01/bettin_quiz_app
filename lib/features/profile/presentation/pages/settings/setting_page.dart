@@ -19,6 +19,14 @@ class _SettingPageState extends State<SettingPage> {
     'Share',
     'Help',
   ];
+  final List<String> icons = [
+    'assets/png_icons/icon1.png',
+    'assets/png_icons/volume_icon2.png',
+    'assets/png_icons/icon3.png',
+    'assets/png_icons/icon4.png',
+    'assets/png_icons/share_icon5.png',
+    'assets/png_icons/icon6.png',
+  ];
 
   bool switchValue = true;
   @override
@@ -41,22 +49,9 @@ class _SettingPageState extends State<SettingPage> {
                           ),
                         )
                       : null;
-                  // if (index == 0) {
-                  //   Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //       builder: (context) => const AchievementsPage(),
-                  //     ),
-                  //   );
-                  // }
                 },
                 tileColor: const Color(0xFF2E6CE3),
-                leading: const ContainerWidget(
-                  icon: Icon(
-                    Icons.share,
-                    color: Colors.white,
-                  ),
-                ),
+                leading: ContainerWidget(icon: Image.asset(icons[index])),
                 title: Text(
                   words[index],
                   style: const TextStyle(
