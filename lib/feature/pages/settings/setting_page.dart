@@ -1,5 +1,5 @@
-import 'package:betting_quiz_app/features/profile/presentation/pages/settings/achievements_page.dart';
-import 'package:betting_quiz_app/features/profile/presentation/widget.dart';
+import 'package:betting_quiz_app/feature/pages/settings/achievements_page.dart';
+import 'package:betting_quiz_app/feature/widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
