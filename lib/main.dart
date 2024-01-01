@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'features/profile/presentation/pages/home/bottom_navbar_page.dart';
+import 'feature/pages/home/bottom_navbar_page.dart';
 
 void main() {
   runApp(const MyApp());

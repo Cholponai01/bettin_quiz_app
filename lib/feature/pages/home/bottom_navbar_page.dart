@@ -1,6 +1,6 @@
-import 'package:betting_quiz_app/features/profile/presentation/pages/home/home_page.dart';
-import 'package:betting_quiz_app/features/profile/presentation/pages/settings/setting_page.dart';
-import 'package:betting_quiz_app/features/profile/presentation/pages/store/store_page.dart';
+import 'package:betting_quiz_app/feature/pages/home/home_page.dart';
+import 'package:betting_quiz_app/feature/pages/settings/setting_page.dart';
+import 'package:betting_quiz_app/feature/pages/store/store_page.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 
